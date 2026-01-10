@@ -4,6 +4,24 @@ import { Download, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 const Hero = () => {
+  const socialLinks = [
+    {
+      icon: <Github className="h-6 w-6" />,
+      href: "https://github.com/Rovineshutabarat",
+      label: "GitHub",
+    },
+    {
+      icon: <Linkedin className="h-6 w-6" />,
+      href: "https://www.linkedin.com/in/rovines-hutabarat/",
+      label: "LinkedIn",
+    },
+    {
+      icon: <Mail className="h-6 w-6" />,
+      href: "mailto:rovineshutabarat23@gmail.com",
+      label: "Email",
+    },
+  ];
+
   return (
     <section
       id="home"
@@ -27,45 +45,34 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button className="px-6 py-3 rounded-xl text-gray-800 font-semibold bg-[#e0e0e0] shadow-[6px_6px_12px_#bebebe,_-6px_-6px_12px_#ffffff] hover:scale-105 transition-all duration-300 flex items-center">
+            <a
+              href="/resume.pdf"
+              download
+              className="px-6 py-3 rounded-xl text-gray-800 font-semibold bg-[#e0e0e0] shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] hover:scale-105 transition-all duration-300 flex items-center"
+            >
               <Download className="w-4 h-4 mr-2" />
               Download CV
-            </button>
-            <Link
+            </a>
+
+            <a
               href="#projects"
-              className="px-6 py-3 rounded-xl text-gray-800 font-semibold bg-[#e0e0e0] shadow-[inset_6px_6px_12px_#bebebe,_inset_-6px_-6px_12px_#ffffff] hover:scale-105 transition-all duration-300"
+              className="px-6 py-3 rounded-xl text-gray-800 font-semibold bg-[#e0e0e0] shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] hover:scale-105 transition-all duration-300"
             >
               View Projects
-            </Link>
+            </a>
           </div>
 
           <div className="flex justify-center space-x-6">
-            {[
-              {
-                icon: <Github className="h-6 w-6" />,
-                href: "https://github.com/Rovineshutabarat",
-                label: "GitHub",
-              },
-              {
-                icon: <Linkedin className="h-6 w-6" />,
-                href: "https://www.linkedin.com/in/rovines-hutabarat/",
-                label: "LinkedIn",
-              },
-              {
-                icon: <Mail className="h-6 w-6" />,
-                href: "mailto:rovineshutabarat23@gmail.com",
-                label: "Email",
-              },
-            ].map(({ icon, href, label }, idx) => (
+            {socialLinks.map((socialLink, index: number) => (
               <Link
-                key={idx}
-                href={href}
+                key={index}
+                href={socialLink.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-12 w-12 flex items-center justify-center rounded-full bg-[#e0e0e0] shadow-[6px_6px_12px_#bebebe,_-6px_-6px_12px_#ffffff] hover:scale-110 transition-all duration-300"
+                className="h-12 w-12 flex items-center justify-center rounded-full bg-[#e0e0e0] shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] hover:scale-110 transition-all duration-300"
               >
-                {icon}
-                <span className="sr-only">{label}</span>
+                {socialLink.icon}
+                <span className="sr-only">{socialLink.label}</span>
               </Link>
             ))}
           </div>

@@ -44,7 +44,7 @@ const projects = [
     description:
       "A machine learning application to classify banana ripeness levels using the K-Nearest Neighbors algorithm.",
     image:
-      "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=600&h=400&fit=crop",
+      "https://github.com/Rovineshutabarat/banana-ripeness-classifier/raw/main/client/public/preview.png",
     technologies: ["Python", "Scikit-learn", "KNN", "Flask"],
     challenge: "Extracting relevant features for accurate classification",
     solution: "Applied feature normalization and optimal K selection for KNN",
@@ -77,7 +77,7 @@ export function Project() {
           <h2 className="text-4xl font-bold mb-6 text-gray-800">
             Featured Work
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full shadow-[inset_4px_4px_8px_#bebebe,_inset_-4px_-4px_8px_#ffffff]" />
+          <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]" />
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             A selection of projects that showcase my approach to solving complex
             problems through design and development.
@@ -94,9 +94,8 @@ export function Project() {
               viewport={{ once: true, amount: 0.3 }}
               className="grid lg:grid-cols-2 gap-12 items-center"
             >
-              {/* Image with neumorphic wrapper */}
               <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                <div className="relative p-1 rounded-2xl bg-[#e0e0e0] shadow-[8px_8px_16px_#bebebe,_-8px_-8px_16px_#ffffff]">
+                <div className="relative p-1 rounded-2xl bg-[#e0e0e0] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff]">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -105,10 +104,12 @@ export function Project() {
                 </div>
               </div>
 
-              {/* Content */}
               <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
                 <div className="mb-6">
-                  <Badge variant="secondary" className="mb-4 text-sm shadow-sm">
+                  <Badge
+                    variant="secondary"
+                    className="px-3 py-1 rounded-md mb-4 bg-[#e0e0e0] text-sm shadow-[2px_2px_6px_#bebebe,-2px_-2px_6px_#ffffff] text-gray-700"
+                  >
                     {project.category}
                   </Badge>
                   <h3 className="text-3xl font-bold mb-4 text-gray-800">
@@ -144,7 +145,7 @@ export function Project() {
                     ].map(({ icon, label, text }, idx) => (
                       <div
                         key={idx}
-                        className="bg-[#e0e0e0] p-4 rounded-xl shadow-[inset_6px_6px_12px_#bebebe,_inset_-6px_-6px_12px_#ffffff]"
+                        className="bg-[#e0e0e0] p-4 rounded-xl shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]"
                       >
                         <div className="flex items-center mb-3">
                           {icon}
@@ -165,7 +166,7 @@ export function Project() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-md bg-[#e0e0e0] text-sm shadow-[2px_2px_6px_#bebebe,_-2px_-2px_6px_#ffffff] text-gray-700"
+                        className="px-3 py-1 rounded-md bg-[#e0e0e0] text-sm shadow-[2px_2px_6px_#bebebe,-2px_-2px_6px_#ffffff] text-gray-700"
                       >
                         {tech}
                       </span>
@@ -177,7 +178,7 @@ export function Project() {
                   <Link
                     href={project.github}
                     target="_blank"
-                    className="px-6 py-3 rounded-xl text-gray-800 font-semibold bg-[#e0e0e0] shadow-[6px_6px_12px_#bebebe,_-6px_-6px_12px_#ffffff] hover:scale-105 transition-all duration-300 flex items-center"
+                    className="px-6 py-3 rounded-xl text-gray-800 font-semibold bg-[#e0e0e0] shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] hover:scale-105 transition-all duration-300 flex items-center"
                   >
                     <Github size={18} className="mr-2" />
                     View on GitHub

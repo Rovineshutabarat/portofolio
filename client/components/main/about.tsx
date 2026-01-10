@@ -5,12 +5,12 @@ export function About() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-800">About Me</h2>
-            <div className="w-24 h-1 mx-auto mb-8 rounded-full bg-[#e0e0e0] shadow-[inset_4px_4px_8px_#bebebe,_inset_-4px_-4px_8px_#ffffff]" />
+            <div className="w-24 h-1 mx-auto mb-8 rounded-full bg-[#e0e0e0] shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <div className="relative rounded-2xl shadow-[6px_6px_12px_#bebebe,_-6px_-6px_12px_#ffffff] p-1">
+              <div className="relative rounded-2xl shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] p-1">
                 <img
                   src="image.jpeg"
                   alt="Talu Samajaya Zendrato"
@@ -37,14 +37,14 @@ export function About() {
                 knowledge with the developer community.
               </p>
 
-              <div className="grid grid-cols-2 gap-6 pt-6">
-                <div className="bg-[#e0e0e0] p-4 rounded-xl shadow-[inset_6px_6px_12px_#bebebe,_inset_-6px_-6px_12px_#ffffff] text-center">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="p-4 rounded-md text-sm text-gray-700">
                   <h4 className="font-semibold mb-2 text-gray-600">
                     Learning Journey
                   </h4>
                   <p className="text-2xl font-bold text-gray-800">3+ Years</p>
                 </div>
-                <div className="bg-[#e0e0e0] p-4 rounded-xl shadow-[inset_6px_6px_12px_#bebebe,_inset_-6px_-6px_12px_#ffffff] text-center">
+                <div className="p-4 rounded-md text-sm text-gray-700">
                   <h4 className="font-semibold mb-2 text-gray-600">
                     Personal Projects
                   </h4>
