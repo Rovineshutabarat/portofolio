@@ -12,7 +12,7 @@ export function About() {
             <div>
               <div className="relative rounded-2xl shadow-[6px_6px_12px_#bebebe,_-6px_-6px_12px_#ffffff] p-1">
                 <img
-                  src="https://i0.wp.com/continuingmissionsta.com/wp-content/uploads/2019/07/Bortus-ORV-1.jpg?fit=1950%2C1462&ssl=1"
+                  src="image.jpeg"
                   alt="Talu Samajaya Zendrato"
                   className="w-full h-96 object-cover rounded-2xl"
                 />
