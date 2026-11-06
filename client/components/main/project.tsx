@@ -7,36 +7,52 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "HR & Payroll Management System",
-    category: "Web Application",
-    description:
-      "A web-based HR and payroll system for managing employee data, attendance, salary calculation, and payroll reports.",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
-    technologies: ["Next.js", "Node.js", "PostgreSQL", "REST API"],
-    challenge:
-      "Ensuring accurate payroll calculations and structured employee data",
-    solution:
-      "Designed normalized database schema and modular payroll calculation logic",
-    outcome:
-      "Simplified HR administration and reduced manual payroll processing",
-    link: "#",
-    github: "https://github.com/Rovineshutabarat/tax",
-  },
-  {
-    title: "E-Learning Platform",
+    title: "Study Box",
     category: "Web Application",
     description:
       "An online learning platform featuring course management, user roles, progress tracking, and content delivery.",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
+    image: "/lms.png",
     technologies: ["Next.js", "Express.js", "PostgreSQL", "JWT"],
+    portrait: false,
     challenge: "Managing user roles and tracking learning progress efficiently",
     solution:
       "Implemented role-based access control and structured progress tracking",
     outcome: "Provided a scalable foundation for online learning activities",
     link: "",
-    github: "https://github.com/Rovineshutabarat/lms",
+    github: "https://github.com/Rovineshutabarat/e-course",
+  },
+  {
+    title: "AnemiScan",
+    category: "Mobile Application",
+    description:
+      "A mobile application for anemia screening used by Puskesmas officers, featuring patient screening, lab result verification, and data synchronization.",
+    image: "/anemiscan.jpeg",
+    technologies: ["Flutter", "Dart", "REST API"],
+    portrait: true,
+    challenge:
+      "Supporting accurate screening records and lab verification in the field",
+    solution:
+      "Built a mobile workflow with screening status tracking and end-of-shift data sync",
+    outcome:
+      "Streamlined anemia screening and data collection for Puskesmas officers",
+    link: "",
+    github: "#",
+  },
+  {
+    title: "PLN ULP Medan Baru Visitor Registration",
+    category: "Web Application",
+    description:
+      "An official visit registration system for PLN ULP Medan Baru, enabling customers to register visits and check their status online.",
+    image: "/pln.png",
+    technologies: ["Laravel", "Blade", "Tailwind CSS", "MySQL"],
+    portrait: false,
+    challenge:
+      "Digitizing the visitor registration process for an electricity service office",
+    solution:
+      "Built a structured online registration and status-checking workflow",
+    outcome: "Made customer visits more organized and easier to track",
+    link: "",
+    github: "https://github.com/Rovineshutabarat/web-kunjungan-pln-medan-baru",
   },
   {
     title: "Banana Ripeness Classifier",
@@ -46,26 +62,12 @@ const projects = [
     image:
       "https://github.com/Rovineshutabarat/banana-ripeness-classifier/raw/main/client/public/preview.png",
     technologies: ["Python", "Scikit-learn", "KNN", "Flask"],
+    portrait: false,
     challenge: "Extracting relevant features for accurate classification",
     solution: "Applied feature normalization and optimal K selection for KNN",
     outcome: "Achieved reliable classification accuracy on test datasets",
     link: "#",
     github: "https://github.com/Rovineshutabarat/banana-ripeness-classifier",
-  },
-  {
-    title: "E-Commerce Platform",
-    category: "Web Application",
-    description:
-      "An e-commerce web application with product management, shopping cart, checkout flow, and order tracking.",
-    image:
-      "https://wpblogassets.paytm.com/businessblog/uploads/2022/11/Blog_P4B_E-commerce-User-Experience.png",
-    technologies: ["Next.js", "Node.js", "PostgreSQL", "Stripe API"],
-    challenge: "Handling cart state and transaction flow securely",
-    solution:
-      "Implemented transactional order processing and secure payment integration",
-    outcome: "Enabled end-to-end online purchasing workflow",
-    link: "#",
-    github: "https://github.com/Rovineshutabarat/Laravel-Food-Order-Website",
   },
 ];
 
@@ -95,11 +97,17 @@ export function Project() {
               className="grid lg:grid-cols-2 gap-12 items-center"
             >
               <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                <div className="relative p-1 rounded-2xl bg-[#e0e0e0] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff]">
+                <div
+                  className={`relative p-1 rounded-2xl bg-[#e0e0e0] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] ${
+                    project.portrait ? "w-fit mx-auto" : ""
+                  }`}
+                >
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-80 object-cover rounded-2xl"
+                    className={`rounded-2xl ${
+                      project.portrait ? "h-[420px] w-auto" : "w-full h-auto"
+                    }`}
                   />
                 </div>
               </div>
